@@ -18,6 +18,16 @@ public class BinarySearchTree {
         tree.insert(56);
         tree.insert(30);
         tree.insert(70);
+        tree.insert(22);
+        tree.insert(40);
+        tree.insert(60);
+        tree.insert(95);
+        tree.insert(11);
+        tree.insert(3);
+        tree.insert(16);
+        tree.insert(65);
+        tree.insert(63);
+        tree.insert(67);
         System.out.println("Binary search tree after insertion:");
         //Displays the binary tree  
         tree.display(tree.root);
@@ -61,16 +71,15 @@ public class BinarySearchTree {
 
     private void display(INode root) {
         //Check whether tree is empty
-        if(root == null){
+        if (root == null) {
             System.out.println("Tree is empty");
             return;
-        }
-        else {
+        } else {
 
-            if(root.left!= null)
+            if (root.left != null)
                 display(root.left);
             System.out.print(root.data + " ");
-            if(root.right!= null)
+            if (root.right != null)
                 display(root.right);
 
         }
