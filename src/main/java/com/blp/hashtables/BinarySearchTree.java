@@ -1,5 +1,8 @@
 package com.blp.hashtables;
 
+/**
+ * Create BinarySearchTree
+ */
 public class BinarySearchTree {
 
     //Represent the root of binary tree
