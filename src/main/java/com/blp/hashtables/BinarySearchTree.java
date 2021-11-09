@@ -31,6 +31,46 @@ public class BinarySearchTree {
         System.out.println("Binary search tree after insertion:");
         //Displays the binary tree  
         tree.display(tree.root);
+        System.out.println();
+        tree.searchNode(tree.root, 63);
+
+    }
+
+    private static void searchNode(INode root, int data) {
+
+        // start with the root node
+        INode curr = root;
+
+        // pointer to store the parent of the current node
+        INode parent = null;
+
+        // traverse the tree and search for the key
+        while (curr != null && curr.data != data) {
+            // update the parent to the current node
+            parent = curr;
+
+            // if the given key is less than the current node, go to the left subtree;
+            // otherwise, go to the right subtree
+            if (data < curr.data) {
+                curr = curr.left;
+            } else {
+                curr = curr.right;
+            }
+        }
+
+        // if the key is not present in the key
+        if (curr == null) {
+            System.out.println("Key not found");
+            return;
+        }
+
+        if (parent == null) {
+            System.out.println("The node with key " + data + " is root node");
+        } else if (data < parent.data) {
+            System.out.println("The given key " + data + " is the left node of the node with key " + parent.data);
+        } else {
+            System.out.println("The given key " + data + "is the right node of the node with key " + parent.data);
+        }
     }
 
     private void insert(int data) {
